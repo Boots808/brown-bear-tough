@@ -7,20 +7,20 @@ const app = express();
 const api = require('./routes/api/apiRoutes');
 const html = require('./routes/html/index');
 
-//POST data
+//POST data - updated - no errors
 
-app.use(express.urlencoded){ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(express.json());
 
-//use routes - UNSURE IF CORRECT
-app.use('./proj-routes/html);
-app.use('./proj-routes/api');
+//use routes - UNSURE IF CORRECT Links - removed errors
+app.use('./Develop/routes/api');
+app.use('./routes/html');
 
 
 //listen function
 app.listen(PORT, () => {
-    console.log('API Server on port ${PORT}!');
+    console.log(`API Server on port ${PORT}!`);
 });
 
 
