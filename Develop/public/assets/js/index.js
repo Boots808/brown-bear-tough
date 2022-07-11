@@ -4,7 +4,7 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-if (window.location.pathname === '/notes') {
+if (window.location.pathname === '/Develop/public/notes.html') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
@@ -40,7 +40,14 @@ const saveNote = (note) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(note),
-  });
+  }).then((response) => {
+    if (response.ok) {
+          return response.json();
+    } else {
+      alert(`Error: ${response.statusText}`);
+    }
+    });
+ 
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -50,9 +57,11 @@ const deleteNote = (id) =>
     },
   });
 
+  //shows inputted notes
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
+  //display note, if saved 
   if (activeNote.id) {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
