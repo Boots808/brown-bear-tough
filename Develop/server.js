@@ -1,11 +1,11 @@
-//code link to express
+//express, port, and dependencies
 const express = require('express');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-//code routes for project - double check correct
-const api = require('./routes/api/apiRoutes');
-const html = require('./routes/html/index');
+//routing to route files
+require('./routes/api/apiRoutes');
+require('./routes/html/index');
 
 //POST data - updated - no errors
 
@@ -14,11 +14,11 @@ app.use(express.static('public'));
 app.use(express.json());
 
 //use routes - UNSURE IF CORRECT Links - removed errors
-app.use('/api', apiRoutes);
-app.use('/', htmlRoutes);
+require('./routes/html/htmlRoute.js')(app);
+require('./routes/api/apiRoutes.js')(app);
 
 
-//listen function
+//listen function for server
 app.listen(PORT, () => {
     console.log(`API Server on port ${PORT}!`);
 });
