@@ -3,6 +3,11 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-size: medium;
+}
+
+.font {
+  font-size: x-large;
 }
 
 .save-note {
