@@ -7,7 +7,7 @@ const generateUniqueId = require('generate-unique-id');
 
 //route and notes + json file linking and return as JSON
 module.exports = (app) => {
-    app.get('../../public/notes.html', (req, res) => {
+    app.get('/api/notes', (req, res) => {
         res.sendFile(path.join(__dirname, '../../db/db.json'));
         db = JSON.parse(db);
         res.json(db);
@@ -28,4 +28,4 @@ module.exports = (app) => {
     //Add delete function here
 
 
-//module.exports = router;s
+//module.exports = routers

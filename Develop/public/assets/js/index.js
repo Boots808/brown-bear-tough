@@ -2,14 +2,14 @@ let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
-let listNotes;
+let noteList;
 
 if (window.location.pathname === '/Develop/public/notes.html') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
   newNoteBtn = document.querySelector('.new-note');
-  listNotes = document.querySelectorAll('.list-container .list-group');
+  noteList = document.querySelectorAll('.list-container .list-group');
 }
 
 // Hides element
@@ -40,17 +40,11 @@ const saveNote = (note) =>
     headers: {
       'Content-Type': 'application/json',
     },
-
+    body: JSON.stringify(note),
   });
 
-  const saveNote = (note) =>
-   fetch('/api/notes',{
-     method: 'POST',
-     headers: {
-       'Content-Type': 'application/json',
-     },
-     body: JSON.stringify(note),
-   });
+     
+
 
    //save note
    const handleNoteSave = () => {
@@ -79,23 +73,22 @@ const saveNote = (note) =>
      renderActiveNote();
    };
 
-   //double check this when get a chance
-  //  const handleRenderSaveBtn = () => {
-  //    if (!noteTitle.value.trim() || !noteText.value.trim()) {
-  //      hide (saveNoteBtn);
-  //    } else {
-  //      show(saveNoteBtn);
-  //    }
-  //  };
+  const handleRenderSaveBtn = () => {
+     if (!noteTitle.value.trim() || !noteText.value.trim()) {
+       hide (saveNoteBtn);
+     } else {
+       show(saveNoteBtn);
+     }
+   };
 
   // show list of new note titles
   const renderNoteList = async (notes) => {
     let json.Notes = await notes.json();
     if (window.location.pathname === '/notes') {
-      listNotes.forEach((el) => (el.innerHTML = ''));
+      noteList.forEach((el) => (el.innerHTML = ''));
     }
 
-    let noteItemList = [];
+    let activeNote = {};
 
     //return HTML element
     const createLi = (text = true) => {
