@@ -14,8 +14,8 @@ app.use(express.static('public'));
 app.use(express.json());
 
 //use routes - UNSURE IF CORRECT Links - removed errors
-app.use('./Develop/routes/api');
-app.use('./routes/html');
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 
 //listen function
@@ -27,4 +27,5 @@ app.listen(PORT, () => {
 //resource: YT Video on Note Taker App: https://www.youtube.com/watch?v=BSVWmsGU4Dc
 //resource: Listen Function resource: https://www.geeksforgeeks.org/express-js-app-listen-function/#:~:text=The%20app.,Server.
 //resource: module 11 - zookeepr coursework
+//resource for unique id: https://www.npmjs.com/package/generate-unique-id
  
