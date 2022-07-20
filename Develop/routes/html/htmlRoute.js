@@ -14,10 +14,6 @@ module.exports = (app) => {
 
 };
 
-// //module ex. need to update - additional of the below? module has multiple
-// router.get('/', (req, res) => {
-//     res.sendFile(path.join(_dirname, 'NEED'));
 
-// });
 
 // module.exports = router;
