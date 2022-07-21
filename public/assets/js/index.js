@@ -138,3 +138,15 @@ showNotes();
 
     
 getAndRenderNotes();
+
+
+
+
+
+
+
+
+
+
+    
+getAndRenderNotes();
