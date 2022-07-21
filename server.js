@@ -24,8 +24,3 @@ app.listen(PORT, () => {
 });
 
 
-//resource: YT Video on Note Taker App: https://www.youtube.com/watch?v=BSVWmsGU4Dc
-//resource: Listen Function resource: https://www.geeksforgeeks.org/express-js-app-listen-function/#:~:text=The%20app.,Server.
-//resource: module 11 - zookeepr coursework
-//resource for unique id: https://www.npmjs.com/package/generate-unique-id
- //resource for app use/app get: https://stackoverflow.com/questions/15601703/difference-between-app-use-and-app-get-in-express-js
